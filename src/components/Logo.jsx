@@ -42,10 +42,10 @@ function Logo() {
 
       {/* نام برند - رسپانسیو */}
       <div>
-        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-pink-700">
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold text-pink-700">
           مبل آرا
         </h1>
-        <p className="text-[10px] sm:text-xs md:text-sm text-gray-500">
+        <p className="text-[8px] sm:text-xs md:text-sm text-gray-500">
           خانه‌ای آراسته با مبل
         </p>
       </div>
