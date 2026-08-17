@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa";
+import { MdOutlineShoppingCart } from "react-icons/md";
+
 import Logo from "../Logo";
 import SearchHeader from "../SearchHeader";
 
@@ -18,6 +22,17 @@ function Header() {
           </div>
           <div className=" w-full flex justify-center items-center">
             <SearchHeader />
+          </div>
+          <div className="w-full flex justify-end ">
+            <Link to="/dashboard">
+              <FaRegUser className="text-xl mt-3 me-2" />
+            </Link>
+            <Link className=" flex justify-center items-center bg-linear-to-l h-0 py-5 px-4 from-pink-900 to-pink-700 rounded-xl hover:bg-linear-to-l hover:from-pink-700 hover:to-pink-900" to='/checkout'>
+              <MdOutlineShoppingCart className="text-white font-bold " />
+              <span className="text-white font-bold text-[15px] ms-2">
+                سبد خرید
+              </span>
+            </Link>
           </div>
         </div>
       </header>
