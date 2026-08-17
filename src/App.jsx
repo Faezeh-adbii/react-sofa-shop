@@ -1,5 +1,7 @@
-function App() {
-  return ;
-}
+import React from 'react'
+import Router from './router/Router';
 
-export default App;
+function App() {
+  return  <Router/> ;}
+
+export default App
