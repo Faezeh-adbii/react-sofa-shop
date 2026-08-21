@@ -1,6 +1,6 @@
 import { api } from "../configs/api";
-import { GET_CATEGORI_NAV } from "../graphQl/queries";
 
+import { GET_CATEGORY_NAV } from "../graphql/queries"
 const useCategoryNav = async() => {
     const res = await api.post("", {
         query: GET_CATEGORY_NAV,
