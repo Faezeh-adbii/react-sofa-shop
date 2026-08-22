@@ -9,7 +9,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative w-full container mt-6 ">
+    <nav className="relative w-full mt-6 ">
       {/* دکمه همبرگر (فقط در موبایل) */}
       <div className="lg:hidden py-2">
         <button
