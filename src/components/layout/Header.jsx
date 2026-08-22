@@ -28,7 +28,7 @@ function Header() {
                 <FaRegUser className="text-xl mt-3 me-2 hover:scale-105  transition-all duration-300 " />
               </Link>
               <Link
-                className=" flex justify-center items-center bg-linear-to-l h-0 py-5 px-4 from-pink-900 to-pink-700 rounded-xl hover:bg-linear-to-l hover:from-pink-700 hover:to-pink-900 flex-shrink-0"
+                className=" flex justify-center items-center bg-linear-to-l h-0 py-5 px-4 from-pink-900 to-pink-700 rounded-xl hover:bg-linear-to-l hover:from-pink-700 hover:to-pink-900 shrink-0"
                 to="/checkout"
               >
                 <MdOutlineShoppingCart className="text-white font-bold " />
