@@ -7,7 +7,7 @@ function SearchHeader() {
       <input
         type="text"
         placeholder="مدل مبل موردنظر را جستجو کنید"
-        className=" w-72 bg-white/85 py-1 px-4 border-2 border-pink-800 rounded-2xl focus:outline-none focus:ring-1 focus:ring-pink-600/20 hover:bg-white transition-all duration-300 "
+        className=" w-72 bg-white/85 py-1 px-4 border-2 border-pink-800 rounded-2xl focus:outline-none focus:ring-1 focus:ring-pink-600/20 hover:bg-white transition-all duration-300 lg:inline hidden "
       />
       <button
         className="p-1 rounded-full bg-pink-800 mx-2 mt-1  absolute  hover:scale-105  transition-all duration-300  "

@@ -8,8 +8,6 @@ import SearchHeader from "../SearchHeader";
 import NavBar from "../navBar/NavBar";
 import { headerClasses } from "../../constants/HeaderStyle";
 
-
-
 function Header() {
   return (
     <>
@@ -17,27 +15,32 @@ function Header() {
         <div className={headerClasses}>
           <h4 className="text-xl font-bold text-white "> فروشگاه مبل آرا </h4>
         </div>
-        <div className="container flex justify-between pt-8">
-          <div className="w-full">
-            <Logo />
+        <div className="container pt-4 lg:pt-9 lg:block flex justify-between items-center">
+          <div className="flex order-2 w-full">
+            <div className="w-full lg:flex hidden ">
+              <Logo />
+            </div>
+            <div className="w-full flex justify-center lg:mt-2 ">
+              <SearchHeader />
+            </div>
+            <div className="w-full flex justify-end ">
+              <Link to="/dashboard">
+                <FaRegUser className="text-xl mt-3 me-2 hover:scale-105  transition-all duration-300 " />
+              </Link>
+              <Link
+                className=" flex justify-center items-center bg-linear-to-l h-0 py-5 px-4 from-pink-900 to-pink-700 rounded-xl hover:bg-linear-to-l hover:from-pink-700 hover:to-pink-900 flex-shrink-0"
+                to="/checkout"
+              >
+                <MdOutlineShoppingCart className="text-white font-bold " />
+                <span className="text-white font-bold text-[15px] ms-2">
+                  سبد خرید
+                </span>
+              </Link>
+            </div>
           </div>
-          <div className=" w-full flex justify-center items-center">
-            <SearchHeader />
+          <div className="w-72 lg:w-full order-1">
+            <NavBar />
           </div>
-          <div className="w-full flex justify-end ">
-            <Link to="/dashboard">
-              <FaRegUser className="text-xl mt-3 me-2 hover:scale-105  transition-all duration-300 " />
-            </Link>
-            <Link className=" flex justify-center items-center bg-linear-to-l h-0 py-5 px-4 from-pink-900 to-pink-700 rounded-xl hover:bg-linear-to-l hover:from-pink-700 hover:to-pink-900" to='/checkout'>
-              <MdOutlineShoppingCart className="text-white font-bold " />
-              <span className="text-white font-bold text-[15px] ms-2">
-                سبد خرید
-              </span>
-            </Link>
-          </div>
-        </div>
-        <div>
-          <NavBar/>
         </div>
       </header>
     </>
