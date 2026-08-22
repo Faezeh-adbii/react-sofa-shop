@@ -71,7 +71,7 @@ code {
 
 @media (min-width: 1536px) {
     .container {
-        padding-inline: 7rem;
+        padding-inline: 9rem;
         max-width: 1536px;
     }
 }
