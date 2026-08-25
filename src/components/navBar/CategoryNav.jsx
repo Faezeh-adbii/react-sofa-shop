@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { HiChevronDown } from "react-icons/hi";
 
-import { useCategoryNav } from "../../hooks/useCategoryNav";
 import Loader from "../loader/Loader";
+import { fetchCategoryNav } from "../../services/productsService";
 
 function CategoryNav({ item }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ function CategoryNav({ item }) {
 
   const { data, isPending, error } = useQuery({
     queryKey: ["category-nav"],
-    queryFn: useCategoryNav, 
+    queryFn: fetchCategoryNav, 
   });
 
   const categories = data?.productCategories || [];
