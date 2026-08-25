@@ -8,4 +8,21 @@ query{
         }
     }
 }`;
-export { GET_CATEGORY_NAV }
+const SEARCH_PRODUCTS = `
+query SerachProducts($searchTerm:String!) {
+  products(
+    where: {OR: {name_contains: $searchTerm , productCategory: {name_contains:  $searchTerm}, manufacturerCity_contains: $searchTerm}}
+  ) {
+    id
+    name
+    productCategory {
+      name
+    }
+    slug
+    manufacturerCity
+  }
+}`;
+export {
+    GET_CATEGORY_NAV,
+    SEARCH_PRODUCTS
+};
