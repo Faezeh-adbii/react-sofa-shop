@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React, { useEffect, useState } from "react";
 import { IoClose, IoSearch } from "react-icons/io5";
+import { fetchSearchProducts } from "../services/productsService";
 
 function SearchHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedTerm, setDebouncedTerm] = useState("");
+
+  const { data, isPending, error } = useQuery({
+    queryKey: ["Search-Products", debouncedTerm],
+    queryFn: () => fetchSearchProducts(debouncedTerm),
+    enabled: searchTerm.length >= 2,
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedTerm(searchTerm);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  console.log({ data });
 
   return (
     <>
