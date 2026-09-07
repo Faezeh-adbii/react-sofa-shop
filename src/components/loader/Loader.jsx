@@ -1,13 +1,13 @@
 import React from "react";
 import { RotatingLines } from "react-loader-spinner";
 
-function Loader() {
+function Loader({size , color}) {
   return (
     <RotatingLines
       visible={true}
-      height="35"
-      width="35"
-      color="#BE185D"
+      height={size}
+      width={size}
+      color={color}
       strokeWidth="5"
       animationDuration="0.75"
       ariaLabel="rotating-lines-loading"
