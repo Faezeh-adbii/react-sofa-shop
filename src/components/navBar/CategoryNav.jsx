@@ -56,7 +56,7 @@ function CategoryNav({ item }) {
         <div className="px-2 py-2">
           {isPending ? (
             <div className="px-4 py-2 text-center">
-              <Loader/>
+              <Loader size={50} color="#BE185D"/>
             </div>
           ) : error ? (
             <div className="px-4 py-2 text-red-500 text-sm text-center">
