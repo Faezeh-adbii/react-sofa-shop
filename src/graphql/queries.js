@@ -9,10 +9,15 @@ query{
     }
 }`;
 const SEARCH_PRODUCTS = `
-query SerachProducts($searchTerm:String!) {
+query SearchProducts($searchTerm:String!) {
   products(
-    where: {OR: {name_contains: $searchTerm , productCategory: {name_contains:  $searchTerm}, manufacturerCity_contains: $searchTerm}}
-  ) {
+where: {
+  OR: [
+    { name_contains: $searchTerm },
+    { productCategory: { name_contains: $searchTerm } },
+    { manufacturerCity_contains: $searchTerm }
+  ]
+}  ) {
     id
     name
     productCategory {
@@ -22,7 +27,4 @@ query SerachProducts($searchTerm:String!) {
     manufacturerCity
   }
 }`;
-export {
-    GET_CATEGORY_NAV,
-    SEARCH_PRODUCTS
-};
+export { GET_CATEGORY_NAV, SEARCH_PRODUCTS };
