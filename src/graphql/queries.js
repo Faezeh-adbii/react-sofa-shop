@@ -23,6 +23,11 @@ where: {
     productCategory {
       name
     }
+    mainImage {
+      url
+      width
+      height
+    }
     slug
     manufacturerCity
   }
