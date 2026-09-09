@@ -4,7 +4,7 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 import Logo from "../Logo";
-import SearchHeader from "../SearchHeader";
+import SearchHeader from "../search/SearchHeader"
 import NavBar from "../navBar/NavBar";
 import { headerClasses } from "../../constants/HeaderStyle";
 
