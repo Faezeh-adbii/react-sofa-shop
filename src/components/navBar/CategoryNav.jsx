@@ -5,15 +5,13 @@ import { HiChevronDown } from "react-icons/hi";
 
 import Loader from "../loader/Loader";
 import { fetchCategoryNav } from "../../services/productsService";
+import { useCategory } from "../../hooks/useCategoryNav";
 
 function CategoryNav({ item }) {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef(null);
 
-  const { data, isPending, error } = useQuery({
-    queryKey: ["category-nav"],
-    queryFn: fetchCategoryNav, 
-  });
+  const { data, isPending, error } = useCategory()
 
   const categories = data?.productCategories || [];
 
