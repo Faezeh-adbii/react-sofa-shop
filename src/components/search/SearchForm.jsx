@@ -1,7 +1,8 @@
 import React from "react";
-import Loader from "../loader/Loader";
 import { IoSearch } from "react-icons/io5";
 import { Controller } from "react-hook-form";
+
+import Loader from "../loader/Loader";
 
 function SearchForm({
   handleSubmit,

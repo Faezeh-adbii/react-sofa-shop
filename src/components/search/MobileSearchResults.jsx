@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { IoSearch } from "react-icons/io5";
+
 import Loader from "../loader/Loader";
 import { useCategory } from "../../hooks/useCategory";
 
