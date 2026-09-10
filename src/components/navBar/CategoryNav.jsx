@@ -5,7 +5,7 @@ import { HiChevronDown } from "react-icons/hi";
 
 import Loader from "../loader/Loader";
 import { fetchCategoryNav } from "../../services/productsService";
-import { useCategory } from "../../hooks/useCategoryNav";
+import { useCategory } from "../../hooks/useCategory";
 
 function CategoryNav({ item }) {
   const [isOpen, setIsOpen] = useState(false);
