@@ -23,7 +23,7 @@ function Header() {
             <div className="w-full flex justify-center lg:mt-2 ">
               <SearchHeader />
             </div>
-            <div className="w-full flex justify-end ">
+            <div className="w-full flex justify-end mt-0 lg:mt-3">
               <Link to="/dashboard">
                 <FaRegUser className="text-xl mt-3 me-2 hover:scale-105  transition-all duration-300 " />
               </Link>
