@@ -11,6 +11,12 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+@layer components {
+    .bg-page {
+        @apply bg-gray-300/30
+    }
+}
+
 @utility container {
     margin-inline: auto;
     padding-inline: 1rem;
