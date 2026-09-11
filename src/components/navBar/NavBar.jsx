@@ -31,7 +31,7 @@ function Navbar() {
                 className="gap-2 py-1 flex justify-center items-center transition-colors duration-300 px-4 lg:px-0"
               >
                 <item.icon className="text-[1.09rem] text-black/75" />
-                <span className="pt-1 text-[0.97rem] font-bold hover:text-black text-black/75 hover:scale-105 duration-300 transition-transform">
+                <span className="pt-1 text-[1.09rem] font-bold hover:text-black text-black/75 hover:scale-105 duration-300 transition-transform">
                   {item.name}
                 </span>
               </Link>
