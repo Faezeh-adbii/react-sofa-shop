@@ -15,7 +15,7 @@ function Header() {
         <div className={headerClasses}>
           <h4 className="text-xl font-bold text-white "> فروشگاه مبل آرا </h4>
         </div>
-        <div className="container pt-4 lg:pt-9 lg:block flex justify-between items-center">
+        <div className="container pt-15 lg:pt-20 lg:block flex justify-between items-center">
           <div className="flex order-2 w-full">
             <div className="w-full lg:flex hidden ">
               <Logo />
