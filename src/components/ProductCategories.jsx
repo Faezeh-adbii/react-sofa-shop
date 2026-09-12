@@ -15,7 +15,7 @@ function ProductCategories() {
       <div className="place-items-center">
         <p className=" flex text-[1.5rem] md:text-[1.77rem] text-gray-900 font-bold">
           دسته بندی محصولات
-          <LuSparkles className="text-pink-700 text-3xl ms-[2px] animate-pulse" />
+          <LuSparkles className="text-pink-700 text-3xl ms-2 animate-pulse" />
         </p>
       </div>
       {isLoading ? (
