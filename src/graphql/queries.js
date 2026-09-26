@@ -8,6 +8,7 @@ query{
         }
     }
 }`;
+
 const SEARCH_PRODUCTS = `
 query SearchProducts($searchTerm:String!) {
   products(
@@ -32,4 +33,20 @@ where: {
     manufacturerCity
   }
 }`;
-export { GET_CATEGORY_NAV, SEARCH_PRODUCTS };
+
+const GET_SPECIALOFFERS = `
+query{
+ products(where: {isAvailable: true, isSpecialOffer: true}, first:6) {
+    id
+    mainImage {
+      url
+    }
+    name
+    slug
+    price
+    manufacturerCity
+    discountPercent
+  }
+}
+`;
+export { GET_CATEGORY_NAV, SEARCH_PRODUCTS, GET_SPECIALOFFERS };
