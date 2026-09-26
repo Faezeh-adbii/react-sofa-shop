@@ -15,7 +15,7 @@ function SpecialOffers() {
 
   return (
     <div
-      className="flex flex-row mt-10 px-2 sm:px-3 gap-1.5 sm:gap-3 md:gap-4 
+      className="flex flex-row mt-20 px-2 sm:px-3 gap-1.5 sm:gap-3 md:gap-4 
                     overflow-hidden bg-box rounded-2xl sm:rounded-4xl"
     >
       {/*  باکس تخفیف (سمت راست) -  */}
@@ -81,7 +81,7 @@ function SpecialOffers() {
                 sensitivity: 1,
                 releaseOnEdges: true,
               }}
-              className="pb-4 !w-full"
+              className="pb-4 w-full"
               breakpoints={{
                 0: { spaceBetween: 8 },
                 640: { spaceBetween: 12 },
