@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "../components/Slider";
 import ProductCategories from "../components/ProductCategories";
+import SpecialOffers from "../components/SpecialOffers";
 
 function HomePage() {
   return (
@@ -8,6 +9,7 @@ function HomePage() {
       <div className="container">
         <Slider />
         <ProductCategories />
+        <SpecialOffers/>
       </div>
     </div>
   );
