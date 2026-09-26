@@ -15,11 +15,30 @@ code {
     .bg-page {
         @apply bg-gray-300/30
     }
+    .bg-box {
+        @apply bg-rose-900/90
+    }
 }
 
 @utility container {
     margin-inline: auto;
     padding-inline: 1rem;
+}
+
+.slide-sm {
+    width: 180px !important;
+}
+
+@media (min-width: 768px) {
+    .slide-sm {
+        width: 200px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slide-sm {
+        width: 220px !important;
+    }
 }
 
 
