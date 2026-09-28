@@ -12,7 +12,7 @@ function ProductCategories() {
   console.log({ data });
 
   return (
-    <div className="pt-15">
+    <div className="pt-15 mt-12">
       <div className="place-items-center">
         <p className=" flex text-[1.5rem] md:text-[1.77rem] text-gray-900 font-bold">
           دسته بندی محصولات
