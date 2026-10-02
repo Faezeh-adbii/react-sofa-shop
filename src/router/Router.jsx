@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+
 import HomePage from "../pages/HomePage";
 import PageNotFound from "../pages/PageNotFound";
 import Checkout from "../pages/Checkout";
@@ -9,6 +10,7 @@ import InstallmentSales from "../pages/InstallmentSales";
 import Contact from "../pages/Contact";
 import ProductDetail from "../pages/ProductDetail";
 import CategoryPage from "../pages/CategoryPage";
+import Products from "../pages/Products";
 
 function Router() {
   return (
@@ -19,6 +21,7 @@ function Router() {
       <Route path="/organization" element={<Organization />} />
       <Route path="/installmentSales" element={<InstallmentSales />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/products" element={ <Products/> } />
       <Route path="/product/:slug" element={<ProductDetail />} />
       <Route path="/category/:slug" element={<CategoryPage />} />
       <Route path="*" element={<PageNotFound />} />
