@@ -3,6 +3,7 @@ import Slider from "../components/Slider";
 import ProductCategories from "../components/ProductCategories";
 import SpecialOffers from "../components/SpecialOffers";
 import InstallmentOffers from "../components/InstallmentOffers";
+import ProductSlider from "../components/ProductSlider";
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
         <ProductCategories />
         <SpecialOffers/>
         <InstallmentOffers/>
+        <ProductSlider/>
       </div>
     </div>
   );
