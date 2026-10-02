@@ -16,7 +16,7 @@ function SpecialOffers() {
   return (
     <div
       className="flex  flex-row mt-33 px-2 sm:px-3 gap-1.5 sm:gap-3 md:gap-4 
-                    overflow-hidden bg-box rounded-2xl sm:rounded-4xl"
+                    overflow-hidden bg-box rounded-2xl sm:rounded-4xl inverted-radius-top"
     >
       {/*  باکس تخفیف (سمت راست) -  */}
       <div
