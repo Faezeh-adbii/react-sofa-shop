@@ -2,6 +2,7 @@ import { api } from "../configs/api";
 
 import {
     GET_CATEGORY_NAV,
+    GET_PRODUCTSSLIDER,
     GET_SPECIALOFFERS,
     SEARCH_PRODUCTS,
 } from "../graphql/queries";
@@ -39,4 +40,15 @@ const fetchSpecialOffers = async() => {
     }
     return res.data.data;
 };
-export { fetchCategoryNav, fetchSearchProducts, fetchSpecialOffers };
+
+//دریافت کل محصولات برای اسلایدر
+const fetchProductsSlider = async() => {
+    const res = await api.post("", {
+        query: GET_PRODUCTSSLIDER,
+    });
+    if (res.data.errors) {
+        throw new Error(res.data.errore[0].message);
+    }
+    return res.data.data;
+};
+export { fetchCategoryNav, fetchSearchProducts, fetchSpecialOffers, fetchProductsSlider };
