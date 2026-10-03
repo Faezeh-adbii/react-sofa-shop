@@ -1,9 +1,11 @@
 import React from "react";
+
 import Slider from "../components/Slider";
 import ProductCategories from "../components/ProductCategories";
 import SpecialOffers from "../components/SpecialOffers";
 import InstallmentOffers from "../components/InstallmentOffers";
 import ProductSlider from "../components/ProductSlider";
+import BuyingGuide from "../components/BuyingGuide";
 
 function HomePage() {
   return (
@@ -14,6 +16,7 @@ function HomePage() {
         <SpecialOffers/>
         <InstallmentOffers/>
         <ProductSlider/>
+        <BuyingGuide/>
       </div>
     </div>
   );
