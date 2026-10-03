@@ -4,6 +4,7 @@ query {
     productCategories {
         name
         slug
+        id
         imageCategory {
             url
         }

@@ -9,7 +9,6 @@ import CategoryItem from "./CategoryItem";
 function ProductCategories() {
   const { data, isLoading, error } = useCategory();
   const categories = data?.productCategories || [];
-  console.log({ data });
 
   return (
     <div className="pt-15 mt-12">
@@ -33,8 +32,8 @@ function ProductCategories() {
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 place-items-center pt-5">
-          {categories.map((category) => (
-           <CategoryItem category={category} />
+          {categories.map((category ) => (
+           <CategoryItem key={category.id} category={category} />
           ))}
         </div>
       )}
