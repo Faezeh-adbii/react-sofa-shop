@@ -15,8 +15,6 @@ function ProductSlider() {
   const { data, isLoading, error } = useProductsSlider();
   const products = data?.products || [];
 
-  console.log({ data });
-
   return (
     <>
       <div className=" flex justify-between items-center mt-45 mb-9 ">
@@ -55,7 +53,7 @@ function ProductSlider() {
                 modules={[FreeMode, Mousewheel]}
                 spaceBetween={16}
                 slidesPerView="auto"
-                FreeMode={true}
+                freeMode={true}
                 grabCursor={true}
                 mousewheel={{
                   forceToAxis: true,
