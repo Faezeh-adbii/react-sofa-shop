@@ -63,6 +63,24 @@ code {
     mask-repeat: no-repeat;
 }
 
+.wavy {
+    clip-path: shape( from 0 25px, curve to 37.5% 22px with 25% 35px, smooth to 62.5% 8px, smooth to 100% 25px, vline to calc(100% - 25px), curve to 62.5% calc(100% - 28.5px) with 75% calc(100% - 32px), smooth to 37.5% calc(100% - 34px), smooth to 0 calc(100% - 25px), vline to 0);
+    /* ✅ راه‌حل پرش */
+    will-change: clip-path;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* تبلت و بالاتر (md: 768px+) — wavy اصلی */
+
+@media (min-width: 768px) {
+    .wavy {
+        clip-path: shape( from 0 25px, curve to 18.75% 22px with 12.5% 35px, smooth to 31.25% 8px, smooth to 43.75% 19.5px, smooth to 56.25% 28.5px, smooth to 68.75% 34px, smooth to 81.25% 41px, smooth to 100% 25px, vline to calc(100% - 25px), curve to 81.25% calc(100% - 5.5px) with 87.5% calc(100% - 10px), smooth to 68.75% calc(100% - 20px), smooth to 56.25% calc(100% - 29.5px), smooth to 43.75% calc(100% - 24px), smooth to 31.25% calc(100% - 20.5px), smooth to 18.75% calc(100% - 19.5px), smooth to 0 calc(100% - 25px), vline to 0);
+    }
+}
+
 @layer components {
     .bg-page {
         @apply bg-gray-300/30
