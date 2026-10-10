@@ -24,9 +24,9 @@ function ProductSlider() {
             <RiSofaLine className="text-3xl mt-0 md:mt-1" />
           </span>
         </div>
-        <Link to="/products" className="bg-gray-900/95 hover:bg-pink-950/95  transition-all duration-300 flex gap-2 font-bold  text-white px-1  sm:px-5  md:px-5 rounded-xl py-3">
+        <Link to="/products" className="bg-gray-900/95 hover:bg-pink-950/95  text-sm md:text-base  transition-all duration-300 flex  gap-2 font-bold  text-white px-1  sm:px-5  md:px-5 rounded-xl py-3">
           مشاهده محصولات بیشتر
-          <IoIosArrowBack className="text-white mt-1 " />
+          <IoIosArrowBack className="text-white mt-[0.2rem] " />
         </Link>
       </div>
       <div
