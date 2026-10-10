@@ -6,6 +6,7 @@ import SpecialOffers from "../components/SpecialOffers";
 import InstallmentOffers from "../components/InstallmentOffers";
 import ProductSlider from "../components/ProductSlider";
 import BuyingGuide from "../components/BuyingGuide";
+import Consultation from "../components/Consultation";
 
 function HomePage() {
   return (
@@ -17,6 +18,7 @@ function HomePage() {
         <InstallmentOffers/>
         <ProductSlider/>
         <BuyingGuide/>
+        <Consultation/>
       </div>
     </div>
   );
