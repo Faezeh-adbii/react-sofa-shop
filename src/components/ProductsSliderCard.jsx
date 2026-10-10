@@ -64,7 +64,7 @@ function ProductsSliderCard({ product }) {
       <Link
         className="mx-auto mb-2 sm:mb-3 
                    py-2 sm:py-2 
-                   px-10 sm:px-5 md:px-10
+                   px-10 sm:px-5 md:px-9 lg:px-10
                    bg-gray-900/95 text-white 
                    text-[0.84rem] sm:text-sm md:text-[0.98rem]
                    rounded-lg md:rounded-xl 
