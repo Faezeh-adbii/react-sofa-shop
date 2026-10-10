@@ -15,7 +15,7 @@ function SpecialOffers() {
 
   return (
     <div
-      className="flex  flex-row mt-33 px-2 sm:px-3 gap-1.5 sm:gap-3 md:gap-4 
+      className="flex  flex-row mt-22 md:mt-30 px-2 sm:px-3 gap-1.5 sm:gap-3 md:gap-4 
                     overflow-hidden bg-box rounded-2xl sm:rounded-4xl inverted-radius-top"
     >
       {/*  باکس تخفیف (سمت راست) -  */}
@@ -40,13 +40,13 @@ function SpecialOffers() {
           </div>
 
           <h3
-            className="text-[10px] sm:text-xs md:text-lg lg:text-2xl 
+            className="text-[17px] sm:text-xs md:text-lg lg:text-2xl 
                          font-extrabold text-center leading-snug px-0.5"
           >
             با تخفیف بخر
           </h3>
           <p
-            className="text-[8px] sm:text-[10px] md:text-sm lg:text-base 
+            className="text-[12px] sm:text-[10px] md:text-sm lg:text-base 
                         font-bold mt-0.5 text-center text-pink-100 px-0.5"
           >
             پولتو پس انداز کن
