@@ -14,7 +14,7 @@ function Slider() {
           <span>، کیفیت بی نظیر</span>
         </div>
       </div>
-      <div className=" mt-5 w-[80%] md:w-[60%] lg:w-[54%] md:pt-17 ">
+      <div className=" mt-5 w-[90%] md:w-[60%] lg:w-[54%] md:pt-17 ">
         <img
           src="/src/assets/slider/slider1.png"
           alt=""
