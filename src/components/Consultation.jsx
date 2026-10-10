@@ -5,7 +5,7 @@ import { IoCheckmarkCircle, IoAlertCircle } from "react-icons/io5";
 
 import { consultationSchema } from "../utils/validations/consultationSchema";
 import { useCreateConsultation } from "../hooks/useConsultation";
-import ConsultationForm from "./ConsulationForm";
+import ConsultationForm from "./ConsultionForm";
 
 function Consultation() {
   const [successMessage, setSuccessMessage] = useState("");
