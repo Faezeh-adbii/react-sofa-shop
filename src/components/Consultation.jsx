@@ -46,7 +46,7 @@ function Consultation() {
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 my-8 sm:my-12 lg:my-16">
+    <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 my-17 sm:my-12 lg:my-16">
       <div
         className="
           relative wavy
