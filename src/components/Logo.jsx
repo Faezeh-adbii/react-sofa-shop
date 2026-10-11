@@ -5,7 +5,7 @@ function Logo() {
     <div className="flex items-center gap-2 sm:gap-3">
       {/* لوگوی SVG - رسپانسیو */}
       <svg
-        className=" sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
+        className=" w-16 h-16  sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
