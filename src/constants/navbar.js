@@ -23,5 +23,18 @@ const navbar = [{
     },
     { name: "تماس با ما", icon: FiPhone, path: "/contact" },
 ];
-
+const khadamats = [
+    { name: "خانه", icon: IoHomeOutline, path: "/" },
+    {
+        name: "سازمان های طرف قرارداد",
+        icon: GoOrganization,
+        path: "/organization",
+    },
+    {
+        name: "فروش اقساطی",
+        icon: PiShoppingBagOpenDuotone,
+        path: "/installmentSales",
+    },
+];
+export { khadamats };
 export default navbar;
