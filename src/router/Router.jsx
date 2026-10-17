@@ -11,6 +11,7 @@ import Contact from "../pages/Contact";
 import ProductDetail from "../pages/ProductDetail";
 import CategoryPage from "../pages/CategoryPage";
 import Products from "../pages/Products";
+import Login from "../pages/auth/Login";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/products" element={ <Products/> } />
       <Route path="/product/:slug" element={<ProductDetail />} />
       <Route path="/category/:slug" element={<CategoryPage />} />
+      <Route path="/login" element={ <Login/> } />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
