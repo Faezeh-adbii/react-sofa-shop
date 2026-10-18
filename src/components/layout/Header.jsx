@@ -4,9 +4,10 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 import Logo from "../Logo";
-import SearchHeader from "../search/SearchHeader"
+import SearchHeader from "../search/SearchHeader";
 import NavBar from "../navBar/NavBar";
 import { headerClasses } from "../../constants/HeaderStyle";
+import User from "./User";
 
 function Header() {
   return (
@@ -24,9 +25,7 @@ function Header() {
               <SearchHeader />
             </div>
             <div className="w-full flex justify-end mt-0 lg:mt-3">
-              <Link to="/dashboard">
-                <FaRegUser className="text-xl mt-3 me-2 hover:scale-105  transition-all duration-300 " />
-              </Link>
+              <User />
               <Link
                 className=" flex justify-center items-center bg-linear-to-l h-0 py-5 px-4 from-pink-900 to-pink-700 rounded-xl hover:bg-linear-to-l hover:from-pink-700 hover:to-pink-900 shrink-0"
                 to="/checkout"
