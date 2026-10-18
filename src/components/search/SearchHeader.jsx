@@ -101,14 +101,19 @@ function SearchHeader() {
       {/*دکمه جستجوی موبایل*/}
       <div className="md:hidden">
         <button
-          className="p-1 rounded-full bg-pink-800 mx-2 mt-1 absolute hover:scale-105 transition-all duration-300"
+          className="p-2 rounded-full  bg-pink-50 hover:bg-pink-100
+                border border-pink-200
+                text-black
+                transition-all duration-300
+                hover:scale-105 hover:shadow-md hover:shadow-pink-200/50
+                focus:outline-none focus:ring-2 focus:ring-pink-400 me-2 mt-[2px] absolute"
           style={{
             boxShadow:
               "rgba(3, 2, 3, 0.084) 0px 54px 55px, rgba(37, 8, 26, 0.023) 0px -12px 30px, rgba(177, 18, 129, 0.122) 0px 4px 6px, rgba(185, 21, 136, 0.138) 0px 12px 13px, rgba(112, 17, 69, 0.204) 0px -3px 5px",
           }}
           onClick={() => setIsSearchOpen(true)}
         >
-          <IoSearch className="text-white text-xl font-medium" />
+          <IoSearch className="text-black  hover:text-pink-700 text-xl font-medium" />
         </button>
       </div>
 
