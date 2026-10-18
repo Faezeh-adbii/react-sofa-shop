@@ -18,7 +18,7 @@ function SearchForm({
   const isDesktop = variant === "desktop";
 
   const inputClasses = isDesktop
-    ? "w-86 bg-white/85 py-2.5 px-6 border-2 border-pink-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-600/35 hover:bg-white transition-all duration-300"
+    ? "w-86 bg-white/85 py-2.5 px-6  border-2 border-pink-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-600/35 hover:bg-white transition-all duration-300"
     : "w-full bg-gray-50 py-3.5 px-5 pr-14 border-2 border-pink-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-600/35 text-base placeholder:text-gray-400 transition-all duration-300";
 
   const buttonClasses = isDesktop
@@ -28,7 +28,7 @@ function SearchForm({
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="relative">
+        <div className="relative me-0 md:me-20 lg:me-0">
           <Controller
             name="searchTerm"
             control={control}
