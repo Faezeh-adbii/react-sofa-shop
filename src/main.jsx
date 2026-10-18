@@ -11,6 +11,7 @@ import App from "./App.jsx";
 import "./styles/index.css";
 import "./styles/fonts.css";
 import { defaultOptions } from "./configs/reactQuery.js";
+import UserProvider from "./context/UserContext.jsx";
 
 const httpLink = new HttpLink({
   uri: import.meta.env.VITE_APP_GRAPHCMS,
@@ -31,9 +32,11 @@ createRoot(document.getElementById("root")).render(
       <ReactQueryDevtools initialIsOpen={false} /> {/* اضافه شد */}
       <ApolloProvider client={client}>
         <BrowserRouter>
-          <Layout>
-            <App />
-          </Layout>
+          <UserProvider>
+            <Layout>
+              <App />
+            </Layout>
+          </UserProvider>
         </BrowserRouter>
       </ApolloProvider>
     </QueryClientProvider>
