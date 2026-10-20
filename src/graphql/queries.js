@@ -69,9 +69,32 @@ query {
     }
 }
 `;
+//کوئری برای کل محصولات  صفحه دسته بندی
+const GET_PRODUCTS = `
+query GetProducts($slug:String){
+  products(
+    where: {isAvailable: true, productCategory: {slug: $slug}}
+    orderBy: createdAt_DESC
+  ) {
+    id
+    name
+    discountPercent
+    manufacturerCity
+    mainImage {
+      url
+    }
+    productCategory {
+      name
+      slug
+    }
+    slug
+    price
+  }
+}`;
 export {
     GET_CATEGORY_NAV,
     SEARCH_PRODUCTS,
     GET_SPECIALOFFERS,
     GET_PRODUCTSSLIDER,
+    GET_PRODUCTS,
 };
