@@ -10,20 +10,19 @@ import Breadcrumb from "../components/Breadcrumb";
 
 function Products() {
   const { slug } = useParams();
+
   const { data: products, isLoading, error } = useProducts(slug);
-  const categoryName = slug
-    ? products?.[0]?.productCategory?.name
-    : "همه محصولات";
 
   return (
     <div className="container py-8 mt-4 lg:mt-7">
+      {/* 👇 کانتینر اصلی با چیدمان ستونی و راست‌چین */}
       <div className="w-full flex flex-col items-start  mb-10">
-        {/* مسیر راهنما (Breadcrumb) */}
+        {/* 👇 مسیر راهنما (Breadcrumb) */}
         <div className="w-full flex justify-start">
           <Breadcrumb categoryName={categoryName} />
         </div>
 
-        {/*  عنوان اصلی دسته‌بندی */}
+        {/* 👇 عنوان اصلی دسته‌بندی */}
         <h2 className="text-2xl md:text-3xl flex items-center font-bold text-gray-800">
           {slug
             ? products?.[0]?.productCategory?.name || (

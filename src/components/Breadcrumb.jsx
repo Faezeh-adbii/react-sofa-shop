@@ -1,6 +1,7 @@
 import React from "react";
-import Loader from "./loader/Loader";
 import { Link } from "react-router-dom";
+
+import Loader from "./loader/Loader";
 
 function Breadcrumb({ categoryName }) {
   return (
