@@ -7,6 +7,7 @@ import {
     GET_SPECIALOFFERS,
     SEARCH_PRODUCTS,
 } from "../graphql/queries";
+import { getOrderByValue } from "../utils/getOrderByValue";
 
 //دریافت دسته‌بندی‌ها برای نوار ناوبری
 const fetchCategoryNav = async() => {
@@ -54,10 +55,16 @@ const fetchProductsSlider = async() => {
 };
 
 //گرفتن همه ی محصولات یا یک دسته
-const fetchProducts = async(slug = null) => {
+const fetchProducts = async(slug = null, sortString = "createdAt_DESC") => {
+
+    const orderByValue = getOrderByValue(sortString);
+
     const res = await api.post("", {
         query: GET_PRODUCTS,
-        variables: { slug },
+        variables: {
+            slug,
+            orderBy: orderByValue,
+        },
     });
     if (res.data.errors) {
         throw new Error(res.data.errors[0].message);
