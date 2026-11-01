@@ -43,7 +43,7 @@ function SortBar({ productCount, isLoading, sortBy, setSortBy }) {
             ))}
           </div>
         </div>
-        <span className="text-sm text-gray-500 font-medium">
+        <span className="text-[13px] text-gray-500 font-medium">
           {isLoading ? (
             <Loader size={25} color="#BE185D" />
           ) : (
