@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { LuSparkles } from "react-icons/lu";
+import { useState } from "react";
 
 import { useProducts } from "../hooks/useProducts";
 import Loader from "../components/loader/Loader";
@@ -9,40 +9,21 @@ import CategoryHeader from "../components/CategoryHeader";
 import Breadcrumb from "../components/Breadcrumb";
 import SortBar from "../components/SortBar";
 import FilterSidebar from "../components/FilterSidebar";
-import { getFinalPrice } from "../utils/priceUtils";
+import { useProductsFilter } from "../hooks/useProductsFilter";
 
 function Products() {
-  const [filters, setFilters] = useState(null)
   const [sortBy, setSortBy] = useState("createdAt_DESC");
+
   const { slug } = useParams();
   const { data: products, isLoading, error } = useProducts(slug, sortBy);
 
+  const {
+    filters,
+    filteredProducts,
+    handleApplyFilters,
+    handleClearFilters
+  } = useProductsFilter(products)
   const categoryName = slug ? products?.[0]?.productCategory?.name : " محصولات";
-
-  //منطق فیلتر کردن 
-  const filteredProducts = useMemo(() => {
-    if (!products) return []
-    if (!filters) return products
-    return products.filter(product => {
-      const finalPrice = getFinalPrice(product.price, product.discountPercent);
-      if (filters.minPrice != null && finalPrice < filters.minPrice) return false;
-      if (filters.maxPrice != null && finalPrice > filters.maxPrice) return false;
-      return true
-    })
-  }, [products, filters])
-
-  //توابع مدیریت فیلتر
-  const handleApplyFilters = (newFilters) => {
-    if (newFilters.minPrice == null && newFilters.maxPrice == null) {
-      setFilters(null)
-    } else {
-      setFilters(newFilters)
-    }
-  }
-  //پاک کردن filter
-  const handleClearFilters = () => {
-    setFilters(null)
-  }
 
   return (
     <div className="container py-8 mt-4 lg:mt-7">
