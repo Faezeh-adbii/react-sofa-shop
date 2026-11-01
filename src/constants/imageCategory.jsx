@@ -1,7 +1,6 @@
 import React from "react";
 import { LuBaby } from "react-icons/lu";
 
-// 👇 ایمپورت درست عکس‌ها (بدون فاصله اضافه و با پسوند درست)
 import MinimalIcon from "../assets/product-category/minimal.png";
 import ServicKhabIcon from "../assets/product-category/servickhab.png";
 import ChesterIcon from "../assets/product-category/chester.png";
@@ -11,8 +10,8 @@ import SaltanatiIcon from "../assets/product-category/saltanati.png";
 import ClassicIcon from "../assets/product-category/classic.png";
 
 const getImageForCategory = (slug) => {
-  const imgClass = "w-16 h-16 xl:w-18 xl:h-18 object-contain";
-  const iconClass = "w-10 h-10 lg:w-14 lg:h-14";
+  const imgClass = "w-17 h-17 xl:w-28 xl:h-28 object-contain";
+  const iconClass = "w-12 h-12 lg:w-12 lg:h-12";
 
   switch (slug) {
     case "mobl-minimal":

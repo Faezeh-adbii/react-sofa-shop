@@ -6,7 +6,6 @@ function CategoryBox({ isActive, category }) {
   return (
     <Link
       to={`/category/${category.slug}`}
-      // 👇 تغییرات اصلی اینجاست: w-full و aspect-square باعث میشه مربع‌ها با گرید هماهنگ بشن
       className={`
         flex flex-col items-center justify-center
         w-full aspect-square
@@ -19,14 +18,13 @@ function CategoryBox({ isActive, category }) {
         }
       `}
     >
-      <div className="mb-1 md:mb-2 flex items-center justify-center">
+      <div className="mb-1 md:mb-2 w-14  h-14  sm:w-20 sm:h-20 lg:h-16 lg:w-16 flex items-center justify-center">
         <div className={isActive ? "brightness-0 invert" : ""}>
           {getImageForCategory(category.slug)}
         </div>
       </div>
 
-      {/* 👇 سایز متن هم ریسپانسیو شد */}
-      <span className="text-[12px] sm:text-[14px] md:text-sm mb-0  lg:mb-2  font-bold text-center leading-tight">
+      <span className="text-[12px] sm:text-[14px] md:text-sm   mb-0  lg:mb-2  font-bold text-center whitespace-nowrap overflow-hidden leading-tight">
         {category.name}
       </span>
     </Link>
