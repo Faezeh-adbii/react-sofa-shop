@@ -71,10 +71,10 @@ query {
 `;
 //کوئری برای کل محصولات  صفحه دسته بندی
 const GET_PRODUCTS = `
-query GetProducts($slug:String , $orderBy:ProductOrderByInput){
+query GetProducts( $where: ProductWhereInput, $orderBy:ProductOrderByInput){
   products(
-    where: {isAvailable: true, productCategory: {slug: $slug}}
-    orderBy: $orderBy
+    orderBy: $orderBy,
+    where:$where
   ) {
     id
     name

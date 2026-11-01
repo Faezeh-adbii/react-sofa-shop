@@ -58,12 +58,20 @@ const fetchProductsSlider = async() => {
 const fetchProducts = async(slug = null, sortString = "createdAt_DESC") => {
 
     const orderByValue = getOrderByValue(sortString);
+     // \ شرط پایه: فقط محصولات موجود
+    const whereClause = {
+        isAvailable: true,
+    };
 
+    // \ فقط اگر slug وجود داشت، فیلتر دسته‌بندی را اضافه کن
+    if (slug) {
+        whereClause.productCategory = { slug: slug };
+    }
     const res = await api.post("", {
         query: GET_PRODUCTS,
         variables: {
-            slug,
             orderBy: orderByValue,
+            where:whereClause,
         },
     });
     if (res.data.errors) {
