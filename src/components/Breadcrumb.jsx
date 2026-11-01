@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import Loader from "./loader/Loader";
 
 function Breadcrumb({ categoryName }) {
+
+  const isProductsPage = categoryName === "محصولات";
+  const isCategoryPage = categoryName && categoryName !== "محصولات";
+
   return (
     <ul className="flex items-center gap-2 text-base text-gray-500 mb-6">
       <li>
@@ -12,15 +16,24 @@ function Breadcrumb({ categoryName }) {
         </Link>
       </li>
       <li className="text-gray-300">/</li>
-      <li>
-        <Link to="/products" className="hover:text-pink-700 transition-colors">
-          محصولات
-        </Link>
-      </li>
-      <li className="text-gray-300">/</li>
-      <li className="text-pink-800 font-bold">
-        {categoryName || <Loader size={25} color="#9D174D" />}
-      </li>
+      {/* 👇 اگر در صفحه /products هستیم، "محصولات" را بدون لینک (فعال) نشان بده */}
+      {isProductsPage ? (
+        <li className="text-pink-800 font-bold">محصولات</li>
+      ) : (
+        <li>
+          <Link to="/products" className="hover:text-pink-700 transition-colors">
+            محصولات
+          </Link>
+        </li>
+      )}
+
+      {/* 👇 اگر در صفحه دسته‌بندی هستیم، نام دسته را بعد از محصولات نشان بده */}
+      {isCategoryPage && (
+        <>
+          <li className="text-gray-300">/</li>
+          <li className="text-pink-800 font-bold">{categoryName}</li>
+        </>
+      )}
     </ul>
   );
 }

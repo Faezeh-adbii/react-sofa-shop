@@ -23,7 +23,7 @@ function Products() {
     handleApplyFilters,
     handleClearFilters
   } = useProductsFilter(products)
-  const categoryName = slug ? products?.[0]?.productCategory?.name : " محصولات";
+  const categoryName = slug ? products?.[0]?.productCategory?.name :"محصولات";
 
   return (
     <div className="container py-8 mt-4 lg:mt-7">
