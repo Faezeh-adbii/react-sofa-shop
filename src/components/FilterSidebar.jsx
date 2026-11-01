@@ -20,12 +20,13 @@ function FilterSidebar({ onApply, onClear, onlyMobileButton = false }) {
   const [customMin, setCustomMin] = useState("");
   const [customMax, setCustomMax] = useState("");
 
+  //تغییر مقدار اسلایدر
   const handleSliderChange = (values) => {
     setSliderValues(values);
     setCustomMin(values[0]);
     setCustomMax(values[1]);
   };
-
+  //تغییر اینپوت کمترین قیمت
   const handleMinChange = (e) => {
     const val = Number(e.target.value);
     setCustomMin(e.target.value);
@@ -33,7 +34,7 @@ function FilterSidebar({ onApply, onClear, onlyMobileButton = false }) {
       setSliderValues([val, sliderValues[1]]);
     }
   };
-
+  //تغییر اینپوت بیشترین قیمت
   const handleMaxChange = (e) => {
     const val = Number(e.target.value);
     setCustomMax(e.target.value);
@@ -41,7 +42,7 @@ function FilterSidebar({ onApply, onClear, onlyMobileButton = false }) {
       setSliderValues([sliderValues[0], val]);
     }
   };
-
+  //تیک زدن یا برداشتن تیک چک‌باکس
   const toggleRange = (range) => {
     setSelectedRanges((prev) =>
       prev.some((r) => r.id === range.id)
@@ -49,7 +50,7 @@ function FilterSidebar({ onApply, onClear, onlyMobileButton = false }) {
         : [...prev, range]
     );
   };
-
+  //پاک کردن همه فیلترها
   const handleClear = () => {
     setSelectedRanges([]);
     setCustomMax("");
@@ -57,21 +58,23 @@ function FilterSidebar({ onApply, onClear, onlyMobileButton = false }) {
     setSliderValues([0, MAX_PRICE]);
     if (onClear) onClear();
   };
-
+  //اعمال فیلترها
   const handleApply = () => {
-    let minPrice = customMin ? Number(customMin) : null;
-    let maxPrice = customMax ? Number(customMax) : null;
+    let minPrice = null;
+    let maxPrice = null;
 
     if (selectedRanges.length > 0) {
-      const mins = selectedRanges.map((r) => r.min).filter((v) => v !== null);
-      const maxes = selectedRanges.map((r) => r.max).filter((v) => v !== null);
-      if (mins.length > 0 && minPrice === null) minPrice = Math.min(...mins);
-      if (maxes.length > 0 && maxPrice === null) maxPrice = Math.max(...maxes);
-    }
+      const mins = selectedRanges.map((r) => r.min).filter((v) => v !== null && v !== undefined);
+      const maxes = selectedRanges.map((r) => r.max).filter((v) => v !== null && v !== undefined);
 
-    if (sliderValues[0] === 0 && sliderValues[1] === MAX_PRICE) {
-      minPrice = null;
-      maxPrice = null;
+      if (mins.length > 0) minPrice = Math.min(...mins);
+      if (maxes.length > 0) maxPrice = Math.max(...maxes);
+    }
+    else {
+      if (sliderValues[0] !== 0 || sliderValues[1] !== MAX_PRICE) {
+        minPrice = sliderValues[0];
+        maxPrice = sliderValues[1];
+      }
     }
 
     if (onApply) {
@@ -79,7 +82,7 @@ function FilterSidebar({ onApply, onClear, onlyMobileButton = false }) {
     }
     setIsOpen(false);
   };
-
+  //بررسی وجود فیلتر فعال
   const hasFilter =
     selectedRanges.length > 0 ||
     customMin !== "" ||
@@ -123,7 +126,7 @@ function FilterSidebar({ onApply, onClear, onlyMobileButton = false }) {
         </button>
       </div>}
 
-      {/*  دکمه موبایل (بدون باکس سفید، فقط دکمه) */}
+      {/*  دکمه موبایل  */}
       {onlyMobileButton && (
         <button
           onClick={() => setIsOpen(true)}
