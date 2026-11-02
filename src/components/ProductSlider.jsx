@@ -17,7 +17,7 @@ function ProductSlider() {
 
   return (
     <>
-      <div className=" flex justify-between items-center mt-45 mb-9 ">
+      <div className=" flex justify-between items-center mt-37 mb-9 ">
         <div>
           <span className="flex text-[1.5rem] md:text-[1.8rem] gap-2 text-black font-bold">
             مبلمان زیبا
