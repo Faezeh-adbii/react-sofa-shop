@@ -47,7 +47,7 @@ function Products() {
           <LuSparkles className="text-pink-700 text-3xl ms-2 animate-pulse" />
         </h2>
 
-        {/* 👇 آیکون‌های دسته‌بندی */}
+        {/*  آیکون‌های دسته‌بندی */}
         <CategoryHeader activeSlug={slug} />
       </div>
       {/*  محصولات + سایدبار فیلتر */}

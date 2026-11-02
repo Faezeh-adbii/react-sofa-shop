@@ -24,18 +24,18 @@ function CategoryPage() {
     handleApplyFilters,
     handleClearFilters
   } = useProductsFilter(products)
-  const sortedProducts=useSortedProducts(products , sortBy)
-  const categoryName = slug ? products?.[0]?.productCategory?.name : " محصولات";
+  const sortedProducts=useSortedProducts(products,sortBy)
+  const categoryName = slug ? products?.[0]?.productCategory?.name :"محصولات";
 
   return (
     <div className="container py-8 mt-4 lg:mt-7">
       <div className="w-full flex flex-col items-start  mb-2">
-        {/* 👇 مسیر راهنما (Breadcrumb) */}
+        {/*  مسیر راهنما (Breadcrumb) */}
         <div className="w-full flex justify-start">
           <Breadcrumb categoryName={categoryName} />
         </div>
 
-        {/* 👇 عنوان اصلی دسته‌بندی */}
+        {/*  عنوان اصلی دسته‌بندی */}
         <h2 className="text-2xl md:text-3xl flex items-center font-bold text-gray-800">
           {slug
             ? products?.[0]?.productCategory?.name || (
@@ -45,7 +45,7 @@ function CategoryPage() {
           <LuSparkles className="text-pink-700 text-3xl ms-2 animate-pulse" />
         </h2>
 
-        {/* 👇 آیکون‌های دسته‌بندی */}
+        {/*  آیکون‌های دسته‌بندی */}
         <CategoryHeader activeSlug={slug} />
       </div>
       {/*  محصولات + سایدبار فیلتر */}
@@ -99,13 +99,13 @@ function CategoryPage() {
               <div className="text-center py-20 text-red-500 font-bold bg-red-50 rounded-xl">
                 خطا: {error.message}
               </div>
-            ) : sortedProducts.length === 0 ? (
+            ) : filteredProducts.length === 0 ? (
               <div className="text-center py-20 text-gray-500 bg-gray-50 rounded-xl">
                 محصولی در این دسته‌بندی یافت نشد.
               </div>
             ) : (
               <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                {sortedProducts.map((product) => (
+                {filteredProducts.map((product) => (
                   <ProductsSliderCard key={product.id} product={product} />
                 ))}
               </div>
