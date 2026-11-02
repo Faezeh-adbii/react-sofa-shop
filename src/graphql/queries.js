@@ -73,6 +73,7 @@ query {
 const GET_PRODUCTS = `
 query GetProducts( $where: ProductWhereInput, $orderBy:ProductOrderByInput){
   products(
+    first: 100,
     orderBy: $orderBy,
     where:$where
   ) {

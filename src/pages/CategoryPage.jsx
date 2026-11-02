@@ -10,6 +10,7 @@ import Breadcrumb from "../components/Breadcrumb";
 import SortBar from "../components/SortBar";
 import FilterSidebar from "../components/FilterSidebar";
 import { useProductsFilter } from "../hooks/useProductsFilter";
+import { useSortedProducts } from "../hooks/useSortedProducts";
 
 function CategoryPage() {
   const [sortBy, setSortBy] = useState("createdAt_DESC");
@@ -23,6 +24,7 @@ function CategoryPage() {
     handleApplyFilters,
     handleClearFilters
   } = useProductsFilter(products)
+  const sortedProducts=useSortedProducts(products , sortBy)
   const categoryName = slug ? products?.[0]?.productCategory?.name : " محصولات";
 
   return (
@@ -97,13 +99,13 @@ function CategoryPage() {
               <div className="text-center py-20 text-red-500 font-bold bg-red-50 rounded-xl">
                 خطا: {error.message}
               </div>
-            ) : filteredProducts.length === 0 ? (
+            ) : sortedProducts.length === 0 ? (
               <div className="text-center py-20 text-gray-500 bg-gray-50 rounded-xl">
                 محصولی در این دسته‌بندی یافت نشد.
               </div>
             ) : (
               <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                {filteredProducts.map((product) => (
+                {sortedProducts.map((product) => (
                   <ProductsSliderCard key={product.id} product={product} />
                 ))}
               </div>
