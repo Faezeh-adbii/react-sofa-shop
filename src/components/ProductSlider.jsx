@@ -30,7 +30,7 @@ function ProductSlider() {
         </Link>
       </div>
       <div
-        className="flex flex-row  py-4 md:py-1 ps-20 sm:ps-17 gap-1.5 sm:gap-3 md:gap-4 
+        className="flex flex-row  py-2 md:py-1 ps-20 sm:ps-17 gap-1.5 sm:gap-3 md:gap-4 
       overflow-hidden bg-gray-900/95   rounded-2xl sm:rounded-4xl inverted-radius-top"
       >
         {/*  اسلایدر (سمت چپ) */}
