@@ -5,7 +5,7 @@ function CategoryItem({category}) {
   return (
       <Link to={`/category/${category.slug}`} className="group">
         <div
-          className="w-28 h-w-28 md:w-h-36 md:h-36 lg:w-40 lg:h-40
+          className="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40
                               flex items-center justify-center 
                               overflow-hidden"
         >
