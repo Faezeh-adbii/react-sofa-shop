@@ -8,7 +8,7 @@ import { khadamats } from "../../constants/navbar";
 import { features } from "../../constants/FooterFeature";
 function Footer() {
   return (
-    <footer className="bg-page">
+    <footer className="bg-gray-50">
       <div     className="
         relative w-full overflow-hidden 
         bg-linear-to-br from-gray-950 via-gray-900/95 to-gray-950

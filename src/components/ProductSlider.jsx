@@ -17,7 +17,7 @@ function ProductSlider() {
 
   return (
     <>
-      <div className=" flex justify-between items-center mt-45 mb-9 ">
+      <div className=" flex justify-between items-center mt-37 mb-9 ">
         <div>
           <span className="flex text-[1.5rem] md:text-[1.8rem] gap-2 text-black font-bold">
             مبلمان زیبا
@@ -30,7 +30,7 @@ function ProductSlider() {
         </Link>
       </div>
       <div
-        className="flex flex-row  py-4 md:py-1 ps-20 sm:ps-17 gap-1.5 sm:gap-3 md:gap-4 
+        className="flex flex-row  py-2 md:py-1 ps-20 sm:ps-17 gap-1.5 sm:gap-3 md:gap-4 
       overflow-hidden bg-gray-900/95   rounded-2xl sm:rounded-4xl inverted-radius-top"
       >
         {/*  اسلایدر (سمت چپ) */}
