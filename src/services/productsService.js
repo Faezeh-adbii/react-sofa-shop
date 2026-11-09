@@ -2,6 +2,7 @@ import { api } from "../configs/api";
 
 import {
     GET_CATEGORY_NAV,
+    GET_PRODUCTDETAIL,
     GET_PRODUCTSSLIDER,
     GET_SPECIALOFFERS,
     SEARCH_PRODUCTS,
@@ -36,7 +37,7 @@ const fetchSpecialOffers = async() => {
         query: GET_SPECIALOFFERS,
     });
     if (res.data.errors) {
-        throw new Error(res.data.errore[0].message);
+        throw new Error(res.data.errors[0].message);
     }
     return res.data.data;
 };
@@ -51,4 +52,15 @@ const fetchProductsSlider = async() => {
     }
     return res.data.data;
 };
-export { fetchCategoryNav, fetchSearchProducts, fetchSpecialOffers, fetchProductsSlider };
+//دریافت اطلاعات جزئیات محصول
+const fetchProductDetail=async(slug)=>{
+    const res=await api.post("" , {
+        query:GET_PRODUCTDETAIL,
+        variables:{slug:slug}
+    })
+    if (res.data.errors) {
+        throw new Error(res.data.errors[0].message);
+    }
+    return res.data.data.product;
+}
+export { fetchCategoryNav, fetchSearchProducts, fetchSpecialOffers, fetchProductsSlider , fetchProductDetail };

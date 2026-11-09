@@ -69,9 +69,35 @@ query {
     }
 }
 `;
+
+// کوئری برای دریافت اطلاعات یک محصول خاص
+const GET_PRODUCTDETAIL=`
+query GetProductDetail($slug:String!) {
+product(where: {slug:$slug}) {
+    mainImage {
+      url
+    }
+    name
+    price
+    manufacturer
+    manufacturerCity
+    stock
+    id
+    gallery {
+      url
+    }
+    isAvailable
+    productCategory {
+      name
+      slug
+    }
+  }
+}
+`
 export {
     GET_CATEGORY_NAV,
     SEARCH_PRODUCTS,
     GET_SPECIALOFFERS,
     GET_PRODUCTSSLIDER,
+    GET_PRODUCTDETAIL
 };
