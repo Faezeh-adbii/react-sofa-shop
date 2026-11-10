@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Loader from "./loader/Loader";
 
-function Breadcrumb({ categoryName }) {
+function Breadcrumb({ categoryName, productName }) {
 
   const isProductsPage = categoryName === "محصولات";
   const isCategoryPage = categoryName && categoryName !== "محصولات";
@@ -16,7 +16,7 @@ function Breadcrumb({ categoryName }) {
         </Link>
       </li>
       <li className="text-gray-300">/</li>
-      {/* 👇 اگر در صفحه /products هستیم، "محصولات" را بدون لینک (فعال) نشان بده */}
+      {/* بودن در صفحه products*/}
       {isProductsPage ? (
         <li className="text-pink-800 font-bold">محصولات</li>
       ) : (
@@ -27,11 +27,18 @@ function Breadcrumb({ categoryName }) {
         </li>
       )}
 
-      {/* 👇 اگر در صفحه دسته‌بندی هستیم، نام دسته را بعد از محصولات نشان بده */}
+      {/* بودن در صفحه CategoryPage*/}
       {isCategoryPage && (
         <>
           <li className="text-gray-300">/</li>
           <li className="text-pink-800 font-bold">{categoryName}</li>
+        </>
+      )}
+      {/* بودن در صفحه productDetail*/}
+      {productName && (
+        <>
+          <li className="text-gray-300">/</li>
+          <li className="text-pink-800 font-bold">{productName}</li>
         </>
       )}
     </ul>
