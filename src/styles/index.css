@@ -71,6 +71,14 @@ code {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"]{
+    -moz-appearance:textfield;
+}
 
 
 /* تبلت و بالاتر (md: 768px+) — wavy اصلی */

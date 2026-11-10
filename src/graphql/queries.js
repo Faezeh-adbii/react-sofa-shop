@@ -69,24 +69,21 @@ query {
     }
 }
 `;
-
-// کوئری برای دریافت اطلاعات یک محصول خاص
-const GET_PRODUCTDETAIL=`
-query GetProductDetail($slug:String!) {
-product(where: {slug:$slug}) {
+//کوئری برای کل محصولات  صفحه دسته بندی
+const GET_PRODUCTS = `
+query GetProducts( $where: ProductWhereInput, $orderBy:ProductOrderByInput){
+  products(
+    first: 100,
+    orderBy: $orderBy,
+    where:$where
+  ) {
+    id
+    name
+    discountPercent
+    manufacturerCity
     mainImage {
       url
     }
-    name
-    price
-    manufacturer
-    manufacturerCity
-    stock
-    id
-    gallery {
-      url
-    }
-    isAvailable
     productCategory {
       name
       slug
@@ -94,10 +91,40 @@ product(where: {slug:$slug}) {
   }
 }
 `
+//  کوئری  برای صفحه جزئیات محصول
+const GET_PRODUCTDETAIL = `
+query GetProductDetail($slug: String!) {
+  product(where: { slug: $slug }) {
+    id
+    name
+    price
+    discountPercent
+    description {
+      html
+    }
+    manufacturer
+    manufacturerCity
+    woodFrame
+    stock
+    isAvailable
+    mainImage {
+      url
+    }
+    gallery {
+      url
+    }
+    productCategory {
+      name
+      slug
+    }
+  }
+}
+`;
 export {
     GET_CATEGORY_NAV,
     SEARCH_PRODUCTS,
     GET_SPECIALOFFERS,
     GET_PRODUCTSSLIDER,
+    GET_PRODUCTS,
     GET_PRODUCTDETAIL
 };
