@@ -79,6 +79,7 @@ query GetProducts( $where: ProductWhereInput, $orderBy:ProductOrderByInput){
   ) {
     id
     name
+    price
     discountPercent
     manufacturerCity
     mainImage {
